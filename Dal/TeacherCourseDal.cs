@@ -9,23 +9,22 @@ using Model;
 
 namespace Dal
 {
-    public class CourseScoreDal
+    public class TeacherCourseDal
     {
-        public List<CourseScore> SelectAll()
+        public List<TeacherCourse> SelectAll()
         {
             //修改
-            DataTable table = SqliteHelper.Select("SELECT * FROM course_score where deleted=0");
+            DataTable table = SqliteHelper.Select("SELECT * FROM teacher_course where deleted=0");
             //修改
-            List<CourseScore> list = new List<CourseScore>();
+            List<TeacherCourse> list = new List<TeacherCourse>();
             foreach (DataRow row in table.Rows)
             {
                 //修改
-                list.Add(new CourseScore()
+                list.Add(new TeacherCourse()
                 {
                     id = Convert.ToInt32(row["id"]),
-                    student_id = Convert.ToInt32(row["student_id"]),
+                    teacher_id = Convert.ToInt32(row["teacher_id"]),
                     course_id = Convert.ToInt32(row["course_id"]),
-                    score = Convert.ToDouble(row["score"]),
                     add_time = Convert.ToDateTime(row["add_time"]),
                     update_time = Convert.ToDateTime(row["update_time"]),
                     deleted = Convert.ToInt32(row["deleted"])
@@ -34,56 +33,54 @@ namespace Dal
             return list;
         }
 
-        public CourseScore SelectById(CourseScore model)
+        public TeacherCourse SelectById(TeacherCourse model)
         {
             //修改
-            string sql = "select * from course_score where id=@id";
+            string sql = "select * from teacher_course where id=@id";
             SQLiteParameter[] ps =
             {
                 new SQLiteParameter("id",model.id)
             };
             DataTable table = SqliteHelper.Select(sql, ps);
             //修改
-            List<CourseScore> list = new List<CourseScore>();
+            List<TeacherCourse> list = new List<TeacherCourse>();
             //遍历数据表，将数据转存到集合中
             foreach (DataRow row in table.Rows)
             {
                 //修改
-                list.Add(new CourseScore()
+                list.Add(new TeacherCourse()
                 {
                     id = Convert.ToInt32(row["id"]),
-                    student_id = Convert.ToInt32(row["student_id"]),
+                    teacher_id = Convert.ToInt32(row["teacher_id"]),
                     course_id = Convert.ToInt32(row["course_id"]),
-                    score = Convert.ToDouble(row["score"]),
                     add_time = Convert.ToDateTime(row["add_time"]),
                     update_time = Convert.ToDateTime(row["update_time"]),
                     deleted = Convert.ToInt32(row["deleted"])
                 });
             }
             //修改
-            CourseScore model2 = list[0];
+            TeacherCourse model2 = list[0];
             return model2;
         }
 
 
-        public int Add(CourseScore model)
+        public int Add(TeacherCourse model)
         {
             //修改
-            string sql = "insert into course_score(student_id,course_id,score,add_time) " +
-                "values (@student_id,@course_id,@score,@add_time)";
+            string sql = "insert into teacher_course(teacher_id,course_id,add_time) " +
+                "values (@teacher_id,@course_id,@add_time)";
             SQLiteParameter[] ps =
             {
                 //修改
-                new SQLiteParameter("@student_id",model.student_id),
+                new SQLiteParameter("@teacher_id",model.teacher_id),
                 new SQLiteParameter("@course_id",model.course_id),
-                new SQLiteParameter("@score",model.score),
                 new SQLiteParameter("@add_time",DateTime.Now)
             };
 
             return SqliteHelper.Add(sql, ps);
         }
 
-        public int Update(CourseScore model)
+        public int Update(TeacherCourse model)
         {
             if (SelectById(model).deleted == 1)
             {
@@ -95,19 +92,19 @@ namespace Dal
 
             return SqliteHelper.update(sql, ps.ToArray());
         }
-        private List<Object> updateSQL(CourseScore model)
+        private List<Object> updateSQL(TeacherCourse model)
         {
             List<SQLiteParameter> ps = new List<SQLiteParameter>();
-            string sql = "update course_score set ";
+            string sql = "update teacher_course set ";
             bool flag = false;
-            if (model.student_id != 0)
+            if (model.teacher_id != 0)
             {
                 if (flag)
                 {
                     sql += ",";
                 }
-                sql += "student_id=@student_id";
-                ps.Add(new SQLiteParameter("@student_id", model.student_id));
+                sql += "teacher_id=@teacher_id";
+                ps.Add(new SQLiteParameter("@teacher_id", model.teacher_id));
                 flag = true;
             }
             if (model.course_id != 0)
@@ -133,22 +130,7 @@ namespace Dal
             obj.Add(ps);
             return obj;
         }
-
-        public int UpdateScore(CourseScore model)
-        {
-            if (SelectById(model).deleted == 1)
-            {
-                return -2;
-            }
-            List<SQLiteParameter> ps = new List<SQLiteParameter>();
-            string sql = "update course_score set score=@score where id=@id";
-            ps.Add(new SQLiteParameter("@score", model.score));
-            ps.Add(new SQLiteParameter("@id", model.id));
-
-            return SqliteHelper.update(sql, ps.ToArray());
-        }
-
-        public int Delete(CourseScore model)
+        public int Delete(TeacherCourse model)
         {
             if (SelectById(model).deleted == 1)
             {
@@ -156,7 +138,7 @@ namespace Dal
                 return -2;
             }
             //修改
-            string sql = "update course_score set deleted=1 where id=@id";
+            string sql = "update teacher_course set deleted=1 where id=@id";
             SQLiteParameter[] ps =
             {
                 new SQLiteParameter("@id",model.id),

@@ -47,6 +47,8 @@
     <Compile Include="CreditClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="Teacher.cs" />
+    <Compile Include="TeacherCourse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

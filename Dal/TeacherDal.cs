@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Common;
 using Model;
+using Common;
+using System.Data.SQLite;
+using System.Data;
 
 namespace Dal
 {
-    public class StudentDal
+    public class TeacherDal
     {
-        public Student SelectById(Student model)
+        public Teacher SelectById(Teacher model)
         {
-            string sql = "select * from student where id=@id";
+            string sql = "select * from teacher where id=@id";
             SQLiteParameter[] ps =
             {
                 new SQLiteParameter("id",model.id)
@@ -22,39 +22,39 @@ namespace Dal
             //执行查询，获取数据
             DataTable table = SqliteHelper.Select(sql, ps);
             //构造数据集合
-            List<Student> list = new List<Student>();
+            List<Teacher> list = new List<Teacher>();
             //遍历数据表，将数据转存到集合中
             foreach (DataRow row in table.Rows)
             {
-                list.Add(new Student()
+                list.Add(new Teacher()
                 {
                     id = Convert.ToInt32(row["id"]),
-                    student_id = Convert.ToInt32(row["student_id"]),
+                    teacher_id = Convert.ToInt32(row["teacher_id"]),
                     password = row["password"].ToString(),
                     name = row["name"].ToString(),
                     sex = Convert.ToInt32(row["sex"]),
-                    student_class = row["student_class"].ToString(),
+                    position = row["position"].ToString(),
                     age = Convert.ToInt32(row["age"]),
                     add_time = Convert.ToDateTime(row["add_time"]),
                     update_time = Convert.ToDateTime(row["update_time"]),
                     deleted = Convert.ToInt32(row["deleted"])
                 });
             }
-            Student model2 = list[0];
+            Teacher model2 = list[0];
             return model2;
         }
-        public int Add(Student model)
+        public int Add(Teacher model)
         {
-            string sql = "insert into student(student_id,password,name,sex,student_class,age,add_time) " +
-                "values (@student_id,@password,@name,@sex,@student_class,@age,@add_time)";
+            string sql = "insert into teacher(teacher_id,password,name,sex,position,age,add_time) " +
+                "values (@teacher_id,@password,@name,@sex,@position,@age,@add_time)";
             //数组的初始化器
             SQLiteParameter[] ps =
             {
-                new SQLiteParameter("@student_id",model.student_id),
+                new SQLiteParameter("@teacher_id",model.teacher_id),
                 new SQLiteParameter("@password",Md5Helper.GetMd5(model.password)),
                 new SQLiteParameter("@name",model.name),
                 new SQLiteParameter("@sex",model.sex),
-                new SQLiteParameter("@student_class",model.student_class),
+                new SQLiteParameter("@position",model.position),
                 new SQLiteParameter("@age",model.age),
                 new SQLiteParameter("@add_time",DateTime.Now)
             };
@@ -68,7 +68,7 @@ namespace Dal
         /// </summary>
         /// <param name="model"></param>
         /// <returns>-2，已经删除</returns>
-        public int Delete(Student model)
+        public int Delete(Teacher model)
         {
             if (SelectById(model).deleted == 1)
             {
@@ -76,7 +76,7 @@ namespace Dal
                 return -2;
             }
 
-            string sql = "update student set deleted=1 where id=@id";
+            string sql = "update teacher set deleted=1 where id=@id";
             SQLiteParameter[] ps =
             {
                 new SQLiteParameter("@id",model.id),
@@ -84,7 +84,7 @@ namespace Dal
             return SqliteHelper.Delete(sql, ps);
         }
 
-        public int Update(Student model)
+        public int Update(Teacher model)
         {
             if (SelectById(model).deleted == 1)
             {
@@ -97,10 +97,10 @@ namespace Dal
 
             return SqliteHelper.update(sql, ps.ToArray());
         }
-        private List<Object> updateSQL(Student model)
+        private List<Object> updateSQL(Teacher model)
         {
             List<SQLiteParameter> ps = new List<SQLiteParameter>();
-            string sql = "update student set ";
+            string sql = "update teacher set ";
             bool flag = false;
             if (model.password != null)
             {
@@ -132,14 +132,14 @@ namespace Dal
                 ps.Add(new SQLiteParameter("@sex", model.sex));
                 flag = true;
             }
-            if (model.student_class != null)
+            if (model.position != null)
             {
                 if (flag)
                 {
                     sql += ",";
                 }
-                sql += "student_class=@student_class";
-                ps.Add(new SQLiteParameter("@student_class", model.student_class));
+                sql += "position=@position";
+                ps.Add(new SQLiteParameter("@position", model.position));
                 flag = true;
             }
             if (model.age != 0)
@@ -152,7 +152,7 @@ namespace Dal
                 ps.Add(new SQLiteParameter("@age", model.age));
                 flag = true;
             }
-            
+
 
 
             if (flag)
@@ -170,23 +170,23 @@ namespace Dal
         }
 
 
-        public List<Student> SelectAll()
+        public List<Teacher> SelectAll()
         {
             //执行查询，获取数据
-            DataTable table = SqliteHelper.Select("SELECT * FROM student where deleted=0");
+            DataTable table = SqliteHelper.Select("SELECT * FROM teacher where deleted=0");
             //构造数据集合
-            List<Student> list = new List<Student>();
+            List<Teacher> list = new List<Teacher>();
             //遍历数据表，将数据转存到集合中
             foreach (DataRow row in table.Rows)
             {
-                list.Add(new Student()
+                list.Add(new Teacher()
                 {
                     id = Convert.ToInt32(row["id"]),
-                    student_id = Convert.ToInt32(row["student_id"]),
+                    teacher_id = Convert.ToInt32(row["teacher_id"]),
                     password = row["password"].ToString(),
                     name = row["name"].ToString(),
                     sex = Convert.ToInt32(row["sex"]),
-                    student_class = row["student_class"].ToString(),
+                    position = row["position"].ToString(),
                     age = Convert.ToInt32(row["age"]),
                     add_time = Convert.ToDateTime(row["add_time"]),
                     update_time = Convert.ToDateTime(row["update_time"]),
