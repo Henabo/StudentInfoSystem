@@ -66,8 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminDal.cs" />
+    <Compile Include="CourseDal.cs" />
+    <Compile Include="CourseScoreDal.cs" />
+    <Compile Include="CreditClassDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqliteHelper.cs" />
+    <Compile Include="StudentDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

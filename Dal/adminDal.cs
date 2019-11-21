@@ -13,71 +13,69 @@ namespace Dal
 {
     public class  AdminDal
     {
-        /// <summary>
-        /// select admin 查询 admin 
-        /// </summary>
-        /// <returns></returns>
+
         public List<Admin> SelectAll()
         {
-            //执行查询，获取数据
+            //修改
             DataTable table = SqliteHelper.Select("SELECT * FROM admin where deleted=0");
-            //构造数据集合
+            //修改
             List<Admin> list = new List<Admin>();
-            //遍历数据表，将数据转存到集合中
             foreach(DataRow row in table.Rows)
             {
+                //修改
                 list.Add(new Admin()
                 {
-                    id = Convert.ToInt32(row["Id"]),
+                    id = Convert.ToInt32(row["id"]),
                     admin_name = row["admin_name"].ToString(),
                     password = row["password"].ToString(),
-                    add_time = row["add_time"].ToString(),
-                    update_time = row["update_time"].ToString(),
+                    add_time = Convert.ToDateTime(row["add_time"]),
+                    update_time = Convert.ToDateTime(row["update_time"]),
                     deleted = Convert.ToInt32(row["deleted"])
                 });
             }
             return list;
         }
 
-        public List<Admin> Login(Admin ai)
+        public Admin SelectById(Admin model)
         {
-            string sql = "select * from admin";
-            SQLiteParameter[] ps = new SQLiteParameter[2];
-            if(ai != null)
+            //修改
+            string sql = "select * from admin where id=@id";
+            SQLiteParameter[] ps =
             {
-                sql += " where admin_name=@admin_name and password=@password";
-                ps[0] = new SQLiteParameter("@admin_name", ai.admin_name);
-                ps[1] = new SQLiteParameter("@password", Md5Helper.GetMd5(ai.password));
-            }
-            //执行查询，获取数据
-            DataTable table = SqliteHelper.Select(sql,ps);
-            
-            //构造数据集合
+                new SQLiteParameter("id",model.id)
+            };
+            DataTable table = SqliteHelper.Select(sql, ps);
+            //修改
             List<Admin> list = new List<Admin>();
             //遍历数据表，将数据转存到集合中
             foreach (DataRow row in table.Rows)
             {
+                //修改
                 list.Add(new Admin()
                 {
                     id = Convert.ToInt32(row["Id"]),
                     admin_name = row["admin_name"].ToString(),
                     password = row["password"].ToString(),
-                    add_time = row["add_time"].ToString(),
-                    update_time = row["update_time"].ToString(),
+                    add_time = Convert.ToDateTime(row["add_time"]),
+                    update_time = Convert.ToDateTime(row["update_time"]),
                     deleted = Convert.ToInt32(row["deleted"])
                 });
             }
-            return list;
+            //修改
+            Admin model2 = list[0];
+            return model2;
         }
 
-        public int Add(Admin ai)
+        public int Add(Admin model)
         {
+            //修改
             string sql = "insert into admin(admin_name,password,add_time) values (@admin_name,@password,@add_time)";
             //数组的初始化器
             SQLiteParameter[] ps =
             {
-                new SQLiteParameter("@admin_name",ai.admin_name),
-                new SQLiteParameter("@password",Md5Helper.GetMd5(ai.password)),
+                //修改
+                new SQLiteParameter("@admin_name",model.admin_name),
+                new SQLiteParameter("@password",Md5Helper.GetMd5(model.password)),
                 new SQLiteParameter("@add_time",DateTime.Now)
             };
 
@@ -85,42 +83,41 @@ namespace Dal
             return SqliteHelper.Add(sql, ps);
         }
 
-        public int Update(Admin ai)
+        public int Update(Admin model)
         {
-            List<Object> obj = updateSQL(ai);
+            if (SelectById(model).deleted == 1)
+            {
+                return -2;
+            }
+            List<Object> obj = updateSQL(model);
             string sql = obj[0].ToString();
             List<SQLiteParameter> ps = (List<SQLiteParameter>)obj[1];
 
             return SqliteHelper.update(sql, ps.ToArray());
         }
-        /// <summary>
-        /// 拼接update的sql语句
-        /// </summary>
-        /// <param name="ai"></param>
-        /// <returns></returns>
-        private List<Object> updateSQL(Admin ai)
+        private List<Object> updateSQL(Admin model)
         {
             List<SQLiteParameter> ps = new List<SQLiteParameter>();
             string sql = "update admin set ";
             bool flag = false;
-            if(ai.admin_name != null)
+            if(model.admin_name != null)
             {
                 if(flag)
                 {
                     sql += ",";
                 }
                 sql += "admin_name=@admin_name";
-                ps.Add(new SQLiteParameter("@admin_name", ai.admin_name));
+                ps.Add(new SQLiteParameter("@admin_name", model.admin_name));
                 flag = true;
             }
-            if(ai.password != null)
+            if(model.password != null)
             {
                 if(flag)
                 {
                     sql += ",";
                 }
                 sql += "password=@password";
-                ps.Add(new SQLiteParameter("@password", Md5Helper.GetMd5(ai.password)));
+                ps.Add(new SQLiteParameter("@password", Md5Helper.GetMd5(model.password)));
                 flag = true;
             }
             if(flag)
@@ -129,26 +126,55 @@ namespace Dal
             }
             sql += "update_time=@update_time";
             ps.Add(new SQLiteParameter("@update_time",DateTime.Now));
-            if(ai.id == 0)
-            {
-                throw new MyException("ID不能为空");
-            }
             sql += " where id=@id";
-            ps.Add(new SQLiteParameter("@id", ai.id));
+            ps.Add(new SQLiteParameter("@id", model.id));
             List<Object> obj = new List<object>();
             obj.Add(sql);
             obj.Add(ps);
             return obj;
         }
 
-        public int Delete(Admin ai)
+        public int Delete(Admin model)
         {
-            string sql = "delete from admin where id=@id";
+            if (SelectById(model).deleted == 1)
+            {
+                //如果deleted==1，已经删除，返回-2
+                return -2;
+            }
+            //修改
+            string sql = "update admin set deleted=1 where id=@id";
             SQLiteParameter[] ps =
             {
-                new SQLiteParameter("@id",ai.id),
+                new SQLiteParameter("@id",model.id),
             };
             return SqliteHelper.Delete(sql, ps);
+        }
+
+        public List<Admin> Login(Admin ai)
+        {
+            string sql = "select * from admin";
+            SQLiteParameter[] ps = new SQLiteParameter[2];
+            if (ai != null)
+            {
+                sql += " where admin_name=@admin_name and password=@password and deleted=0";
+                ps[0] = new SQLiteParameter("@admin_name", ai.admin_name);
+                ps[1] = new SQLiteParameter("@password", Md5Helper.GetMd5(ai.password));
+            }
+            DataTable table = SqliteHelper.Select(sql, ps);
+            List<Admin> list = new List<Admin>();
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new Admin()
+                {
+                    id = Convert.ToInt32(row["Id"]),
+                    admin_name = row["admin_name"].ToString(),
+                    password = row["password"].ToString(),
+                    add_time = Convert.ToDateTime(row["add_time"]),
+                    update_time = Convert.ToDateTime(row["update_time"]),
+                    deleted = Convert.ToInt32(row["deleted"])
+                });
+            }
+            return list;
         }
     }
 }

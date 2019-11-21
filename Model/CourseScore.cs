@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Admin
+    public class CourseScore
     {
         public int id { get; set; }
-        public string admin_name { get; set; }
-        public string password { get; set; }
-        public DateTime add_time{ get; set; }
+
+        public int student_id { get; set; }
+
+        public int course_id { get; set; }
+
+        public Double score { get; set; }
+
+        public DateTime add_time { get; set; }
+
         public DateTime update_time { get; set; }
+
         public int deleted { get; set; }
     }
 }
