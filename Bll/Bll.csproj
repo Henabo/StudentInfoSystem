@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -48,12 +49,8 @@
       <Project>{6709fa6f-a3a5-41b5-a3bf-9d806ae1b356}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Dal\Dal.csproj">
-      <Project>{90164765-ee6f-47e6-813e-10a8fe008920}</Project>
-      <Name>Dal</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{977d4df0-1855-4159-a794-dfc1abe85761}</Project>
+      <Project>{93f60928-950c-4fe1-8217-5166bc0304b4}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
