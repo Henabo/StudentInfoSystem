@@ -14,10 +14,9 @@ namespace UI
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles(); 
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (System.Windows.Application.Current == null) new System.Windows.Application(); System.Windows.Application.Current.ShutdownMode = System.Windows.ShutdownMode.OnExplicitShutdown;
-            Application.Run(new Form1());            
+            Application.Run(new AdminUI());
         }
     }
 }

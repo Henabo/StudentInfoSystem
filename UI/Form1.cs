@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WpfApp1;
+using Bll;
 
 namespace UI
 {
@@ -18,10 +18,5 @@ namespace UI
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            WpfApp1.MainWindow wpfwindow = new WpfApp1.MainWindow();
-            wpfwindow.ShowDialog();
-        }
     }
 }
