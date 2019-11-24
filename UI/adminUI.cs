@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bll;
 using Model;
@@ -14,7 +7,7 @@ namespace UI
 {
     public partial class AdminUI : Form
     {
-        AdminBll miBll = new AdminBll();
+        AdminBll adminBll = new AdminBll();
         public AdminUI()
         {
             InitializeComponent();
@@ -28,16 +21,17 @@ namespace UI
         private void LoadList()
         {
 
-            dataGridView1.DataSource = miBll.SelectAll();
+            dataGridView1.DataSource = adminBll.SelectAll();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Admin ai = new Admin();
-            ai.password = textBox2.Text;
-            ai.admin_name = textBox1.Text;
             
-            if(miBll.Add(ai))
+            ai.admin_name = textBox1.Text;
+            ai.password = textBox2.Text;
+
+            if (adminBll.Add(ai))
             {
                 LoadList();
             }
@@ -52,7 +46,7 @@ namespace UI
             Admin ai = new Admin();
             ai.password = textBox2.Text;
             ai.admin_name = textBox1.Text;
-            if (miBll.login(ai))
+            if (adminBll.login(ai))
             {
                 MessageBox.Show("登陆成功");
             }

@@ -17,7 +17,7 @@ namespace Dal
         public List<Admin> SelectAll()
         {
             //修改
-            DataTable table = SqliteHelper.Select("SELECT * FROM admin where deleted=0");
+            DataTable table = SqliteHelper.Select("select * from admin where deleted=0");
             //修改
             List<Admin> list = new List<Admin>();
             foreach(DataRow row in table.Rows)
@@ -29,7 +29,6 @@ namespace Dal
                     admin_name = row["admin_name"].ToString(),
                     password = row["password"].ToString(),
                     add_time = Convert.ToDateTime(row["add_time"]),
-                    update_time = Convert.ToDateTime(row["update_time"]),
                     deleted = Convert.ToInt32(row["deleted"])
                 });
             }
@@ -170,7 +169,6 @@ namespace Dal
                     admin_name = row["admin_name"].ToString(),
                     password = row["password"].ToString(),
                     add_time = Convert.ToDateTime(row["add_time"]),
-                    update_time = Convert.ToDateTime(row["update_time"]),
                     deleted = Convert.ToInt32(row["deleted"])
                 });
             }

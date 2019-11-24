@@ -79,6 +79,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -102,7 +103,7 @@
       <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{93f60928-950c-4fe1-8217-5166bc0304b4}</Project>
+      <Project>{977d4df0-1855-4159-a794-dfc1abe85761}</Project>
       <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\WpfApp1\WpfApp1.csproj">

@@ -10,20 +10,20 @@ namespace Bll
 {
     public class AdminBll
     {
-        AdminDal miDal = new AdminDal();
+        AdminDal adminDal = new AdminDal();
 
         public List<Admin> SelectAll()
         {
-            return miDal.SelectAll();
+            return adminDal.SelectAll();
         }
         public bool Add(Admin ai)
         {
-            return miDal.Add(ai) > 0;
+            return adminDal.Add(ai) > 0;
         }
 
         public bool login(Admin ai)
         {
-            var list = miDal.Login(ai);
+            var list = adminDal.Login(ai);
             if(list.Count > 0)
             {
                 return true;
