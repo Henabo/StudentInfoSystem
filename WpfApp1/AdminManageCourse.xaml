@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp1.AdminManageCourse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="AdminManageCourse" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="1574329800646.jpeg"/>
+        </Grid.Background>
+        <DataGrid HorizontalAlignment="Left" Height="250" Margin="75,125,0,0" VerticalAlignment="Top" Width="450">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="是否选择"/>
+                <DataGridTextColumn Header="课程号"/>
+                <DataGridTextColumn Header="课程名"/>
+                <DataGridTextColumn Header="教师"/>
+                <DataGridComboBoxColumn Header="学分"/>
+                <DataGridComboBoxColumn Header="教室"/>
+                <DataGridComboBoxColumn Header="上课时间"/>
+                <DataGridComboBoxColumn Header="种类"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="修改" HorizontalAlignment="Left" Height="40" Margin="590,195,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click_1"/>
+        <Button Content="删除" HorizontalAlignment="Left" Height="40" Margin="590,260,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click_2"/>
+        <Button Content="新增" HorizontalAlignment="Left" Height="40" Margin="590,130,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click"/>
+        <Button Content="返回" HorizontalAlignment="Left" Height="40" Margin="590,320,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click_3"/>
+
+    </Grid>
+</Window>
