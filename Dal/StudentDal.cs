@@ -12,37 +12,6 @@ namespace Dal
 {
     public class StudentDal
     {
-        public Student SelectByStudentId(Student model)
-        {
-            string sql = "select * from student where student_id=@student_id and deleted=0";
-            SQLiteParameter[] ps =
-            {
-                new SQLiteParameter("student_id",model.student_id)
-            };
-            //执行查询，获取数据
-            DataTable table = SqliteHelper.Select(sql, ps);
-            //构造数据集合
-            List<Student> list = new List<Student>();
-            //遍历数据表，将数据转存到集合中
-            foreach (DataRow row in table.Rows)
-            {
-                list.Add(new Student()
-                {
-                    id = Convert.ToInt32(row["id"]),
-                    student_id = Convert.ToInt32(row["student_id"]),
-                    password = row["password"].ToString(),
-                    name = row["name"].ToString(),
-                    sex = Convert.ToInt32(row["sex"]),
-                    student_class = row["student_class"].ToString(),
-                    age = Convert.ToInt32(row["age"]),
-                    add_time = Convert.ToDateTime(row["add_time"]),
-                    update_time = Convert.ToDateTime(row["update_time"]),
-                    deleted = Convert.ToInt32(row["deleted"])
-                });
-            }
-            Student model2 = list[0];
-            return model2;
-        }
         public Student SelectById(Student model)
         {
             string sql = "select * from student where id=@id";
