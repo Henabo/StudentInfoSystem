@@ -8,45 +8,78 @@
         Title="AdminAddCourse" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="1574329800646.jpeg"/>
+            <ImageBrush ImageSource="女子.jpg"/>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="130,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="55,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" FontSize="20"><Run Text="课"/><Run Text="序号"/><Run Text="："/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="130,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="55,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" FontSize="20"><Run Text="课程名"/><Run Text="："/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="75,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" FontSize="20"><Run Text="学分"/><Run Text="："/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="130,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="35,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="20"><Run Text="任课教师"/><Run Text="："/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="35,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="20"><Run Text="上课地点"/><Run Text="："/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="35,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontSize="20"><Run Text="上课时间"/><Run Text="："/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="35,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontSize="20"><Run Text="是否必修"/><Run Text="："/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="15,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontSize="20"><Run Text="初始课余量"/><Run Text="："/></TextBlock>
-        <Button Content="新增" HorizontalAlignment="Left" Height="45" Margin="350,360,0,0" VerticalAlignment="Top" Width="155" Click="Button_Click"/>
-        <RadioButton Content="必修课" HorizontalAlignment="Left" Height="30" Margin="135,339.127,0,0" VerticalAlignment="Top" Width="130" FontSize="14"/>
-        <RadioButton Content="选修课" HorizontalAlignment="Left" Height="20" Margin="210,339.127,0,0" VerticalAlignment="Top" Width="70" FontSize="14"/>
-        <ComboBox HorizontalAlignment="Left" Height="30" Margin="130,285,0,0" VerticalAlignment="Top" Width="150">
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="130,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="55,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" FontSize="20"><Run Text="课程名"/><Run Text="："/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="75,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" FontSize="20"><Run Text="学分"/><Run Text="："/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="130,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="35,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="20"><Run Text="任课教师"/><Run Text="："/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="35,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="20"><Run Text="上课地点"/><Run Text="："/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="35,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontSize="20"><Run Text="上课时间"/><Run Text="："/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="35,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontSize="20"><Run Text="是否必修"/><Run Text="："/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="15,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontSize="20"><Run Text="初始课余量"/><Run Text="："/></TextBlock>
+        <RadioButton Content="必修课" HorizontalAlignment="Left" Height="30" Margin="135,284.127,0,0" VerticalAlignment="Top" Width="130" FontSize="14"/>
+        <RadioButton Content="选修课" HorizontalAlignment="Left" Height="20" Margin="210,284.127,0,0" VerticalAlignment="Top" Width="70" FontSize="14"/>
+        <ComboBox HorizontalAlignment="Left" Height="30" Margin="130,230,0,0" VerticalAlignment="Top" Width="150">
             <ComboBoxItem Content="星期一" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="星期二" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="星期三" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="星期四" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="星期五" HorizontalAlignment="Left" Width="148"/>
         </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Height="30" Margin="130,240,0,0" VerticalAlignment="Top" Width="150"/>
-        <ComboBox HorizontalAlignment="Left" Height="30" Margin="130,195,0,0" VerticalAlignment="Top" Width="150">
+        <ComboBox HorizontalAlignment="Left" Height="30" Margin="130,185,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox HorizontalAlignment="Left" Height="30" Margin="130,140,0,0" VerticalAlignment="Top" Width="150">
             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="4" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="5" HorizontalAlignment="Left" Width="148"/>
         </ComboBox>
-        <Slider HorizontalAlignment="Left" Height="30" Margin="130,374.127,0,0" VerticalAlignment="Top" Width="150" LargeChange="10" Maximum="100" SmallChange="1" Value="50"/>
-        <ComboBox HorizontalAlignment="Left" Height="30" Margin="315,285,0,0" VerticalAlignment="Top" Width="150">
+        <ComboBox HorizontalAlignment="Left" Height="30" Margin="315,230,0,0" VerticalAlignment="Top" Width="150">
             <ComboBoxItem Content="第一节" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="第二节" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="第三节" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="第四节" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="第五节" HorizontalAlignment="Left" Width="148"/>
         </ComboBox>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="130,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Button Content="确定" HorizontalAlignment="Left" Height="85" Margin="698.6,320,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="85" Cursor="Hand">
+            <Button.Resources>
+                <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Grid>
+                                    <Rectangle>
+                                        <Rectangle.Fill>
+                                            <ImageBrush ImageSource="按钮4.png">
+                                                <ImageBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="1.5"/>
+                                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                                        <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                                        <TranslateTransform/>
+                                                    </TransformGroup>
+                                                </ImageBrush.RelativeTransform>
+                                            </ImageBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsFocused" Value="True"/>
+                                    <Trigger Property="IsDefaulted" Value="True"/>
+                                    <Trigger Property="IsMouseOver" Value="True"/>
+                                    <Trigger Property="IsPressed" Value="True"/>
+                                    <Trigger Property="IsEnabled" Value="False"/>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Window>

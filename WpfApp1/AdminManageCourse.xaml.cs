@@ -50,5 +50,16 @@ namespace WpfApp1
             www.Show();
             this.Close();
         }
+
+
+
+        
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            AdminLogin www = new AdminLogin();
+            www.Show();
+            this.Close();
+        }
     }
 }

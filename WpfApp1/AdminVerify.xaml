@@ -8,12 +8,47 @@
         Title="AdminVerify" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="1574329800646.jpeg"/>
+            <ImageBrush ImageSource="远望.jpg"/>
         </Grid.Background>
-        <Label Content="请输入管理员通行验证码" HorizontalAlignment="Left" Margin="163,191,0,0" VerticalAlignment="Top"/>
-        <Button Content="确定" HorizontalAlignment="Left" Margin="305,280,0,0" VerticalAlignment="Top" Width="75" AutomationProperties.Name="btn_code" Click="btn_code_click"/>
-        <TextBox x:Name="adminCode" HorizontalAlignment="Left" Height="23" Margin="395,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="35" Margin="670,365,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="100" Foreground="Black" FontWeight="Bold" Click="Button_Click_2">
+        <Label Content="请输入管理员通行验证码" HorizontalAlignment="Left" Margin="305,105,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <PasswordBox HorizontalAlignment="Left" Height="25.24" Margin="328,154.76,0,0" VerticalAlignment="Top" Width="142"/>
+        <Button Content="确定" HorizontalAlignment="Left" Height="90" Margin="340,185,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="130" Background="#FFDDDDDD" FontSize="14" Cursor="Hand">
+            <Button.Resources>
+                <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Grid>
+                                    <Rectangle>
+                                        <Rectangle.Fill>
+                                            <ImageBrush ImageSource="按钮1.png" Stretch="Uniform">
+                                                <ImageBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform ScaleX="2" ScaleY="2" CenterX="0.5" CenterY="0.5"/>
+                                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                                        <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                                        <TranslateTransform/>
+                                                    </TransformGroup>
+                                                </ImageBrush.RelativeTransform>
+                                            </ImageBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="61.113,25,20,44.76"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsFocused" Value="True"/>
+                                    <Trigger Property="IsDefaulted" Value="True"/>
+                                    <Trigger Property="IsMouseOver" Value="True"/>
+                                    <Trigger Property="IsPressed" Value="True"/>
+                                    <Trigger Property="IsEnabled" Value="False"/>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Height="40.4" Margin="720,380,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="73.6" Foreground="White" Cursor="Hand">
             <Button.Resources>
                 <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
                     <Setter Property="Template">
@@ -21,7 +56,7 @@
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Grid>
                                     <Rectangle/>
-                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="用户登陆"/>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="用户登录"/>
                                 </Grid>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsFocused" Value="True"/>

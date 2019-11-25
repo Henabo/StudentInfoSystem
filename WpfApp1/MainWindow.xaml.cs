@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Bll;
+
 
 namespace WpfApp1
 {
@@ -41,6 +41,11 @@ namespace WpfApp1
             AdminVerify www = new AdminVerify();
             www.Show();
             this.Close();
+        }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }

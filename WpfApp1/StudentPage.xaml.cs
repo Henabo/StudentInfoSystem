@@ -41,5 +41,12 @@ namespace WpfApp1
             StudentCheckScore www = new StudentCheckScore();
             www.Show();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            MainWindow www = new MainWindow();
+            www.Show();
+            this.Close();
+        }
     }
 }

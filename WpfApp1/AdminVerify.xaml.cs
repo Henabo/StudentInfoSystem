@@ -26,15 +26,15 @@ namespace WpfApp1
 
         private void btn_code_click(object sender, RoutedEventArgs e)
         {
-            if (adminCode.Text.Equals("123456"))
-            {
-                
-                AdminLogin www = new AdminLogin();
-                www.Show();
-                this.Close();
-            }
-            else
-                MessageBox.Show("验证码错误");
+//            if (adminCode.Text.Equals("123456"))
+//            {
+//                
+//                AdminLogin www = new AdminLogin();
+//                www.Show();
+//                this.Close();
+//            }
+//            else
+//                MessageBox.Show("验证码错误");
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

@@ -29,5 +29,12 @@ namespace WpfApp1
             TeacherManageCourse www = new TeacherManageCourse();
             www.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow www = new MainWindow();
+            www.Show();
+            this.Close();
+        }
     }
 }

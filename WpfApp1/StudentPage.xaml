@@ -26,6 +26,29 @@
         <Button Content="选课" HorizontalAlignment="Left" Height="75" Margin="515,110,0,0" VerticalAlignment="Top" Width="145" Click="Button_Click"/>
         <Button Content="退课" HorizontalAlignment="Left" Height="75" Margin="515,185,0,0" VerticalAlignment="Top" Width="145" Click="Button_Click_1"/>
         <Button Content="查成绩" HorizontalAlignment="Left" Height="75" Margin="515,260,0,0" VerticalAlignment="Top" Width="145" Click="Button_Click_2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="40" Margin="720,0,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="73.6" Click="Button_Click_3">
+            <Button.Resources>
+                <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Grid>
+                                    <Rectangle/>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="退出登录" Height="20" Width="53.6" Margin="12.8,10,8.6,10"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsFocused" Value="True"/>
+                                    <Trigger Property="IsDefaulted" Value="True"/>
+                                    <Trigger Property="IsMouseOver" Value="True"/>
+                                    <Trigger Property="IsPressed" Value="True"/>
+                                    <Trigger Property="IsEnabled" Value="False"/>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Window>

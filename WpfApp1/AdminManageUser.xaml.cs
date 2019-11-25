@@ -48,10 +48,7 @@ namespace WpfApp1
             www.Show();
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
@@ -71,6 +68,18 @@ namespace WpfApp1
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            AdminLogin www = new AdminLogin();
+            www.Show();
+            this.Close();
         }
     }
 }

@@ -8,7 +8,7 @@
         Title="AdminAddTeacher" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="1574329800646.jpeg"/>
+            <ImageBrush ImageSource="女子.jpg"/>
         </Grid.Background>
         <TextBox HorizontalAlignment="Left" Height="30" Margin="130,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="75,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" FontSize="20"><Run Text="工"/><Run Text="号"/><Run Text="："/></TextBlock>
@@ -20,13 +20,48 @@
         <TextBox HorizontalAlignment="Left" Height="30" Margin="130,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="75,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="20"><Run Text="年龄"/><Run Text="："/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="75,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" FontSize="20"><Run Text="职称"/><Run Text="："/></TextBlock>
-        <Button Content="新增" HorizontalAlignment="Left" Height="45" Margin="150,345,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click"/>
-        <RadioButton Content="男" HorizontalAlignment="Left" Height="20" Margin="140,200,0,0" VerticalAlignment="Top" Width="105"/>
-        <RadioButton Content="女" HorizontalAlignment="Left" Height="20" Margin="190,200,0,0" VerticalAlignment="Top" Width="120"/>
+        <RadioButton Content="男" HorizontalAlignment="Left" Height="20" Margin="150,200,0,0" VerticalAlignment="Top" Width="105"/>
+        <RadioButton Content="女" HorizontalAlignment="Left" Height="20" Margin="200,200,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox HorizontalAlignment="Left" Height="30" Margin="130,285,0,0" VerticalAlignment="Top" Width="150">
             <ComboBoxItem Content="讲师" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="副教授" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem Content="教授" HorizontalAlignment="Left" Width="148"/>
         </ComboBox>
+        <Button Content="确定" HorizontalAlignment="Left" Height="80" Margin="700,320,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="80" Cursor="Hand">
+            <Button.Resources>
+                <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Grid>
+                                    <Rectangle>
+                                        <Rectangle.Fill>
+                                            <ImageBrush ImageSource="按钮4.png">
+                                                <ImageBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="1.5"/>
+                                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                                        <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                                        <TranslateTransform/>
+                                                    </TransformGroup>
+                                                </ImageBrush.RelativeTransform>
+                                            </ImageBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsFocused" Value="True"/>
+                                    <Trigger Property="IsDefaulted" Value="True"/>
+                                    <Trigger Property="IsMouseOver" Value="True"/>
+                                    <Trigger Property="IsPressed" Value="True"/>
+                                    <Trigger Property="IsEnabled" Value="False"/>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
