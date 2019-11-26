@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bll;
+using WpfApp1;
 
 namespace UI
 {
@@ -16,6 +16,18 @@ namespace UI
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            UserLogin www = new UserLogin();
+            www.Show();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            AdminLogin www = new AdminLogin();
+            www.Show();
         }
 
     }

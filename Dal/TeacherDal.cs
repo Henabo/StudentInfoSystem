@@ -12,37 +12,6 @@ namespace Dal
 {
     public class TeacherDal
     {
-        public Teacher SelectByTeacherId(Teacher model)
-        {
-            string sql = "select * from teacher where teacher_id=@teacher_id";
-            SQLiteParameter[] ps =
-            {
-                new SQLiteParameter("teacher_id",model.teacher_id)
-            };
-            //执行查询，获取数据
-            DataTable table = SqliteHelper.Select(sql, ps);
-            //构造数据集合
-            List<Teacher> list = new List<Teacher>();
-            //遍历数据表，将数据转存到集合中
-            foreach (DataRow row in table.Rows)
-            {
-                list.Add(new Teacher()
-                {
-                    id = Convert.ToInt32(row["id"]),
-                    teacher_id = Convert.ToInt32(row["teacher_id"]),
-                    password = row["password"].ToString(),
-                    name = row["name"].ToString(),
-                    sex = Convert.ToInt32(row["sex"]),
-                    position = row["position"].ToString(),
-                    age = Convert.ToInt32(row["age"]),
-                    add_time = Convert.ToDateTime(row["add_time"]),
-                    update_time = Convert.ToDateTime(row["update_time"]),
-                    deleted = Convert.ToInt32(row["deleted"])
-                });
-            }
-            Teacher model2 = list[0];
-            return model2;
-        }
         public Teacher SelectById(Teacher model)
         {
             string sql = "select * from teacher where id=@id";

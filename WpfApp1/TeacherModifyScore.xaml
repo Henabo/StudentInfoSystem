@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApp1.TeacherModifyScore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="TeacherModifyScore" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="1574329800646.jpeg"/>
+        </Grid.Background>
+        <DataGrid HorizontalAlignment="Left" Height="240" Margin="90,130,0,0" VerticalAlignment="Top" Width="390">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="学号"/>
+                <DataGridTextColumn Header="姓名"/>
+                <DataGridTextColumn Header="分数"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button Content="提交" HorizontalAlignment="Left" Height="70" Margin="560,300,0,0" VerticalAlignment="Top" Width="135" Click="Button_Click"/>
+    </Grid>
+</Window>

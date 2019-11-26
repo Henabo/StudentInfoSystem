@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace WpfApp1
 {
     /// <summary>
@@ -20,9 +21,31 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            StudentPage www = new StudentPage();
+            www.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            
+            AdminVerify www = new AdminVerify();
+            www.Show();
+            this.Close();
+        }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }

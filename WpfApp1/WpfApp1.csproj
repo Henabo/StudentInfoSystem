@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{44206F05-2F1B-437A-9434-7466621CA5F6}</ProjectGuid>
+    <ProjectGuid>{E82C4631-973A-4811-9D8E-08DDAFC7E58E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WpfApp1</RootNamespace>
     <AssemblyName>WpfApp1</AssemblyName>
@@ -34,6 +34,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -55,6 +59,111 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminAddCourse.xaml.cs">
+      <DependentUpon>AdminAddCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddStudent.xaml.cs">
+      <DependentUpon>AdminAddStudent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddTeacher.xaml.cs">
+      <DependentUpon>AdminAddTeacher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditCourse.xaml.cs">
+      <DependentUpon>AdminEditCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditStudent.xaml.cs">
+      <DependentUpon>AdminEditStudent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditTeather.xaml.cs">
+      <DependentUpon>AdminEditTeather.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHome.xaml.cs">
+      <DependentUpon>AdminHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.xaml.cs">
+      <DependentUpon>AdminLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManageCourse.xaml.cs">
+      <DependentUpon>AdminManageCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManageUser.xaml.cs">
+      <DependentUpon>AdminManageUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRegister.xaml.cs">
+      <DependentUpon>AdminRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminVerify.xaml.cs">
+      <DependentUpon>AdminVerify.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentCheckScore.xaml.cs">
+      <DependentUpon>StudentCheckScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentChooseCourse.xaml.cs">
+      <DependentUpon>StudentChooseCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDropCourse.xaml.cs">
+      <DependentUpon>StudentDropCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPage.xaml.cs">
+      <DependentUpon>StudentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherManageCourse.xaml.cs">
+      <DependentUpon>TeacherManageCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherModifyScore.xaml.cs">
+      <DependentUpon>TeacherModifyScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherPage.xaml.cs">
+      <DependentUpon>TeacherPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AdminAddCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminAddStudent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminAddTeacher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminEditCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminEditStudent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminEditTeather.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminManageCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminManageUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminVerify.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +176,34 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StudentCheckScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentChooseCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentDropCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherManageCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherModifyScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +230,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1574329800646.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HNB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="阴阳鱼1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bll\Bll.csproj">
+      <Project>{ee4111af-1f80-4c98-a3ab-c10e897192d3}</Project>
+      <Name>Bll</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6709fa6f-a3a5-41b5-a3bf-9d806ae1b356}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{977d4df0-1855-4159-a794-dfc1abe85761}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="按钮1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="远望.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="按钮2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="女子.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="按钮4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

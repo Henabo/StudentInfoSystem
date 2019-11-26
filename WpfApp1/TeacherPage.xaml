@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfApp1.TeacherPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="TeacherPage" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="1574329800646.jpeg"/>
+        </Grid.Background>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="190" Margin="210,240,0,0" Stroke="Black" VerticalAlignment="Top" Width="245"/>
+        <TextBlock HorizontalAlignment="Left" Height="50" Margin="260,310,0,0" TextWrapping="Wrap" Text="课表" VerticalAlignment="Top" Width="125"/>
+        <Calendar HorizontalAlignment="Left" Height="155" Margin="5,240,0,0" VerticalAlignment="Top" Width="200"/>
+        <Rectangle HorizontalAlignment="Left" Height="155" Margin="65,55,0,0" Stroke="Black" VerticalAlignment="Top" Width="115">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="HNB.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="205,55,0,0" TextWrapping="Wrap" Text="姓名：" VerticalAlignment="Top" Width="60"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="205,80,0,0" TextWrapping="Wrap" Text="年龄：" VerticalAlignment="Top" Width="60"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="205,105,0,0" TextWrapping="Wrap" Text="性别：" VerticalAlignment="Top" Width="60"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="205,130,0,0" TextWrapping="Wrap" Text="职称：" VerticalAlignment="Top" Width="60"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="205,155,0,0" TextWrapping="Wrap" Text="工号：" VerticalAlignment="Top" Width="60"/>
+        <Button Content="查看所有课程" HorizontalAlignment="Left" Height="75" Margin="515,110,0,0" VerticalAlignment="Top" Width="145" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="40" Margin="720,0,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="73.6" Click="Button_Click_1">
+            <Button.Resources>
+                <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Grid>
+                                    <Rectangle/>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="退出登录" Height="20" Width="53.6" Margin="12.8,10,8.6,10"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsFocused" Value="True"/>
+                                    <Trigger Property="IsDefaulted" Value="True"/>
+                                    <Trigger Property="IsMouseOver" Value="True"/>
+                                    <Trigger Property="IsPressed" Value="True"/>
+                                    <Trigger Property="IsEnabled" Value="False"/>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Window>
