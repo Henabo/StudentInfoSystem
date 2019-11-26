@@ -16,10 +16,12 @@ namespace Bll
         {
             return stuDal.SelectAll();
         }
+
         public List<Course> SelectStuCourse(Student stu)  //学生课表
         {
             //没找到Dal用的那个方法
         }
+
         public bool AddStudent(Student stu)
         {
             return stuDal.Add(stu) > 0;

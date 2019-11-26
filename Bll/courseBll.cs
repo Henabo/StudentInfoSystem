@@ -16,10 +16,12 @@ namespace Bll
         {
             return courDal.SelectAll();
         }
+
         public bool AddCourse(Course cour)   //添加   
         {
             return courDal.Add(cour) > 0;
         }
+
         public bool DeleteCourse(Course cour) //删除
         {
             if (courDal.Delete(cour) == -2) //已经删除，不允许再次删除
@@ -27,6 +29,7 @@ namespace Bll
             else
                 return courDal.Delete(cour) > 0;
         }
+
         public bool ModifyCourse(Course cour)  //修改
         {
             if (courDal.Update(cour) == -2) //已经删除，不允许修改

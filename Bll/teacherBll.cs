@@ -16,6 +16,7 @@ namespace Bll
         {
             return tchDal.SelectAll();
         }
+
         public bool AddTeacher(Teacher tch)
         {
             return tchDal.Add(tch) > 0;
